@@ -14,9 +14,6 @@ do
       curl --location --request POST 'http://192.168.87.21:8081/zeroconf/switch' \
         --header 'Content-Type: application/json' \
         --data-raw '{
-            "sequence": "",
-            "encrypt": "false",
-            "selfApikey": "",
             "deviceid": "10013c757a",
             "data": {
                 "switch": "on"
@@ -28,9 +25,6 @@ do
     curl --location --request POST 'http://192.168.87.21:8081/zeroconf/switch' \
       --header 'Content-Type: application/json' \
       --data-raw '{
-          "sequence": "",
-          "encrypt": "false",
-          "selfApikey": "",
           "deviceid": "10013c757a",
           "data": {
               "switch": "off"
