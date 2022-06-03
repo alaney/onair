@@ -1,9 +1,13 @@
 #!/bin/bash
 
 signOn=0
+automator_pid=$(( $(ps -ax | egrep -m1 "OnAir" | awk '{print $1}') ))
 
 while true
 do
+  resample_pid=$(( $(ps -ax | egrep -m1 "OnAir" | awk '{print $1}') ))
+  (( $automator_pid == $resample_pid )) || break
+
   parent_path=$(dirname "${BASH_SOURCE[0]}")
   isMeetOpen=$(osascript $parent_path/isMeetOpen.scpt)
   zoomCount=$(ps aux | grep -c zoom)
@@ -33,3 +37,4 @@ do
   fi 
   sleep 10
 done
+exit 0
