@@ -30,7 +30,7 @@ do
   fi
   
   # Apple script that checks Google Chrome for a Goole Meet tab
-  is_meet_open=$(osascript $parent_path/isMeetOpen.scpt)
+  is_meet_open=$(osascript $parent_path/isMeetOpen.applescript)
   # Looks like the number of Zoom processes increases to 4 when I'm in a Zoom meeting.
   zoom_count=$(ps aux | grep -c zoom)
 
